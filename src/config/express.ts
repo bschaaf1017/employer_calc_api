@@ -1,6 +1,7 @@
 import express from 'express';
 
-const createServer = (): express.Application => {
+
+const createServer = (port: string): express.Application => {
   const app = express();
 
   app.use(express.urlencoded({ extended: true }));
@@ -11,6 +12,13 @@ const createServer = (): express.Application => {
   app.get('/health', (_req, res) => {
     res.send('UP');
   });
+
+  app.post('/send-mail', (req: express.Request, res: express.Response) => {
+    console.log('req::L', req.body)
+    res.send('ok')
+  })
+
+  app.listen(port, () => console.log(`Express listening on port ${port}`))
 
   return app;
 };

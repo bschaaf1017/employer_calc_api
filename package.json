@@ -7,7 +7,7 @@
     },
     "scripts": {
         "start": "ts-node -r tsconfig-paths/register -r dotenv/config src/index",
-        "dev": "nodemon --config restart.json",
+        "dev": "set NODE_ENV=development&& nodemon --config restart.json",
         "clean": "rm -rf coverage build tmp",
         "prebuild": "npm run lint",
         "build": "tsc -p tsconfig.build.json",
@@ -20,6 +20,7 @@
     "dependencies": {
         "express": "^4.17.1",
         "module-alias": "^2.2.2",
+        "path": "^0.12.7",
         "tslib": "~2.3.0",
         "winston": "^3.3.3"
     },
