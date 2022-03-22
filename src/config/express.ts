@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import {sendIt} from '../services/mail'
+import { sendIt } from '../services/mail'
 
 
 const createServer = (port: string): express.Application => {
@@ -23,8 +23,8 @@ const createServer = (port: string): express.Application => {
     console.log('mail service: ', sendIt)
     console.log('req::L', req.body)
     try {
-      sendIt(req.body)
-      res.send('tittie')
+      await sendIt(req.body)
+      res.status(201).send('worked')
     } catch (e) {
       console.log(e);
       res.status(400)
