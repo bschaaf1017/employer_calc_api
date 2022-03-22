@@ -1,9 +1,15 @@
 import express from 'express';
+import cors from 'cors';
+
+import {sendIt} from '../services/mail'
 
 
 const createServer = (port: string): express.Application => {
   const app = express();
 
+  app.use(cors({
+    origin: '*'
+  }))
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
@@ -13,9 +19,16 @@ const createServer = (port: string): express.Application => {
     res.send('UP');
   });
 
-  app.post('/send-mail', (req: express.Request, res: express.Response) => {
+  app.post('/send-mail', async (req: express.Request, res: express.Response) => {
+    console.log('mail service: ', sendIt)
     console.log('req::L', req.body)
-    res.send('ok')
+    try {
+      sendIt(req.body)
+      res.send('tittie')
+    } catch (e) {
+      console.log(e);
+      res.status(400)
+    }
   })
 
   app.listen(port, () => console.log(`Express listening on port ${port}`))
