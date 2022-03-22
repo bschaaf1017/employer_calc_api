@@ -7,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
   export const sendIt = async (data: any): Promise<void> => {
     console.log('data: ', data)
     const msg = {
-      to: 'brian.schaaf@sunnydayfund.com', // Change to your recipient
+      to: ['cyrus.bakhshi@sunnydayfund.com', 'brian.schaaf@sunnydayfund.com', 'josh.clark@sunnydayfund.com', 'sid.pailla@sunnydayfund.com'], // Change to your recipient
       from: 'brian.schaaf@sunnydayfund.com', // Change to your verified sender
       subject: 'Sending with SendGrid is Fun',
       templateId: process.env.TEMPLATE_ID,
@@ -17,8 +17,8 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
     }
     sgMail
       .send(msg)
-      .then(() => {
-        console.log('Email sent')
+      .then((data) => {
+        console.log('Email sent: ', data)
       })
       .catch((error) => {
         console.error(error)
