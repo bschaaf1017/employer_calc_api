@@ -1,12 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 
-import { sendIt } from '../services/mail'
+import { sendIt } from '../services/email/mail';
+import { addContact } from '../services/hubspot';
+import { Company } from '../models/company';
 
 
 const createServer = (port: string): express.Application => {
   const app = express();
-
   app.use(cors({
     origin: '*'
   }))
@@ -20,10 +21,11 @@ const createServer = (port: string): express.Application => {
   });
 
   app.post('/send-mail', async (req: express.Request, res: express.Response) => {
-    console.log('mail service: ', sendIt)
     console.log('req::L', req.body)
+    const companyData : Company = req.body
     try {
-      await sendIt(req.body)
+      await sendIt(companyData)
+      await addContact(companyData)
       res.status(201).send('worked')
     } catch (e) {
       console.log(e);

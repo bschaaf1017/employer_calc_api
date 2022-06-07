@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!--<![endif]-->
+  <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+  <!--[if (gte mso 9)|(IE)]>
+  <style type="text/css">
+    body {width: 700px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+  <style type="text/css">
+    body,
+    p,
+    div {
+      font-family: arial, helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    body {
+      color: #000000;
+    }
+
+    body a {
+      color: #1188E6;
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    table.wrapper {
+      width: 100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    img.max-width {
+      max-width: 100% !important;
+    }
+
+    .column.of-2 {
+      width: 50%;
+    }
+
+    .column.of-3 {
+      width: 33.333%;
+    }
+
+    .column.of-4 {
+      width: 25%;
+    }
+
+    ul ul ul ul {
+      list-style-type: disc !important;
+    }
+
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+
+    @media screen and (max-width:480px) {
+
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .columns {
+        width: 100% !important;
+      }
+
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
+    .savings-calculator * {
+      font-family: Montserrat, sans-serif;
+    }
+
+    .savings-calculator {
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: space-around;
+      padding: 50px 0;
+      border: 2px solid #ffa926;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #calc-form {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-around;
+    }
+
+    .switch-container {
+      display: flex;
+      align-items: center;
+      /* justify-content: baseline; */
+      gap: 5px;
+    }
+
+    .switch-label {
+      padding-bottom: 5px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: #004462;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #ffa926;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #ffa926;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+
+    .calculator-input-group {
+      white-space: nowrap;
+    }
+
+    .calculator-input-group>* {
+      vertical-align: middle;
+    }
+
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .calculator-slider {
+      -webkit-appearance: none;
+      background: transparent;
+      border: none !important;
+      width: 90%;
+    }
+
+    .calculator-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      margin-top: -4px;
+      border: 1px solid #000;
+      height: 12px;
+      width: 12px;
+      border-radius: 6px;
+      background: #004462;
+    }
+
+    .calculator-slider::-webkit-slider-runnable-track {
+      background: #ffa926;
+      height: 3px;
+    }
+
+    .calculator-slider::-moz-range-thumb {
+      background: #004462;
+    }
+
+    .calculator-slider::-moz-range-track {
+      height: 3px;
+      background-color: #ffa926;
+    }
+
+    .calculator-slider:focus {
+      outline: none;
+    }
+
+    .calculator-slider::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    .calculator-savings-label {
+      color: #ffa926;
+      font-weight: bolder;
+    }
+
+    .text-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .snapshot-btn {
+      padding: 10px;
+      background-color: #004462;
+      border: 1px solid #004462;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .snapshot-btn:hover {
+      color: #004462;
+      background-color: #ffa926;
+      border: 1px solid #ffa926;
+    }
+
+    @media only screen and (max-width: 781px) {
+      .savings-calculator {
+        display: block;
+        padding: 8%;
+        min-width: 400px;
+      }
+
+      #calc-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-around;
+      }
+
+      .calculator-input-group {
+        white-space: normal;
+      }
+
+      .savings-calculator>div p {
+        margin-bottom: 14px;
+      }
+
+      .inputs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .slider-container {
+        width: 100%;
+        align-items: center;
+      }
+
+      .calculations-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  </style>
+  <!--user entered Head Start-->
+  <!--End Head user entered-->
+</head>
+
+<body>
+  <center class="wrapper" data-link-color="#1188E6"
+    data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#ffb349;">
+    <div class="webkit">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#ffb349">
+        <tr>
+          <td valign="top" bgcolor="#ffb349" width="100%">
+            <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0"
+              border="0">
+              <tr>
+                <td width="100%">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                          style="width:100%; max-width:700px;" align="center">
+                          <tr>
+                            <td role="modules-container"
+                              style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#F3F6FF"
+                              width="100%" align="left">
+                              <table class="module preheader preheader-hide" role="module" data-type="preheader"
+                                border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+                                <tr>
+                                  <td role="module-content">
+                                    <p>SDF</p>
+                                  </td>
+                                </tr>
+                              <table class="wrapper" role="module" data-type="image" border="0" cellpadding="0"
+                                cellspacing="0" width="100%" style="table-layout: fixed;"
+                                data-muid="6e0d4f99-4ac1-47a7-8681-b39ea8ee64e3">
+                                <tbody>
+                                  <tr>
+                                    <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top"
+                                      align="center">
+                                      <img class="max-width" border="0"
+                                        style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;"
+                                        width="700" alt="" data-proportionally-constrained="true" data-responsive="true"
+                                        src="http://cdn.mcauto-images-production.sendgrid.net/bbf8d19ba2ea1855/1bcec24f-8d41-4151-bbdd-3c817c0bbd8d/1000x215.png">
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%"
+                                role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF"
+                                data-distribution="1">
+                                <tbody>
+                                  <tr role="module-content">
+                                    <td height="100%" valign="top">
+                                      <table width="680"
+                                        style="width:680px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;"
+                                        cellpadding="0" cellspacing="0" align="left" border="0" bgcolor=""
+                                        class="column column-0">
+                                        <tbody>
+                                          <tr>
+                                            <td style="padding:0px;margin:0px;border-spacing:0;">
+                                              <table class="module" role="module" data-type="code" border="0"
+                                                cellpadding="0" cellspacing="0" width="100%"
+                                                style="table-layout: fixed;"
+                                                data-muid="f0202c8a-7ab3-46a1-93b9-d64f94b2ace7">
+                                                <tbody>
+                                                  <tr>
+                                                    <td height="100%" valign="top" role="module-content">
+                                                      <div id="employer-calculator" class="savings-calculator">
+                                                        <div id="calc-form">
+                                                          <div class="inputs-container">
+                                                            <div class="switch-container">
+                                                              <div>Reward Model: <strong>{{REWARD_MODEL}}</strong></div>
+                                                            </div><br>
+                                                            <p>
+                                                              Number of Employees: <strong>{{NUM_EMPS}}</strong>
+                                                            </p><br>
+                                                            <p>
+                                                              Median Salary: <strong>${{SALARY}}</strong>
+                                                            </p><br>
+                                                            <p>
+                                                              Turnover Rate: <strong>{{TURNOVER}}%</strong>
+                                                            </p><br>
+                                                            <p>
+                                                              401(k) Participation: <strong>{{PARTICIPATION}}%</strong>
+                                                            </p><br>
+                                                            <p>
+                                                              Employer Contribution Cap: <strong>${{CONT_CAP}}</strong>
+                                                            </p>
+                                                          </div>
+
+                                                          <div class="calculations-container">
+                                                            <p>Estimated benefit after first year:</p>
+                                                            <p>
+                                                              Reduced <strong>turnover</strong> savings:<br>
+                                                              <span id="turnover-savings" class="calculator-savings-label">{{TURNOVER_TEXT}}</span>
+                                                            </p>
+                                                            <p>
+                                                              Reduction in <strong>lost productivity</strong>:<br>
+                                                              <span id="productivity-savings" class="calculator-savings-label">{{PRODUCTIVITY_TEXT}}</span>
+                                                            </p>
+                                                            <p>
+                                                              Retirement savings burden:<br>
+                                                              <span id="retirement-savings-burden" class="calculator-savings-label">{{RETIREMENT_TEXT}}</span>
+                                                            </p>
+                                                            <p>
+                                                              Gross savings:<br>
+                                                              <span id="net-savings" class="calculator-savings-label">{{SAVINGS_TEXT}}</span>
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+</body>
+
+</html>
